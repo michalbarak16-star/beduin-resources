@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>חיים משותפים בנגב</title>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #E8DCC8;
+    --deep: #2C1A0E;
+    --terracotta: #B85C2A;
+    --sky: #4A7FA5;
+    --sage: #6B8C6B;
+    --cream: #FAF6F0;
+    --warm-white: #FFFDF9;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Heebo', sans-serif;
+    background: var(--cream);
+    color: var(--deep);
+    font-weight: 300;
+    line-height: 1.7;
+    direction: rtl;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--deep);
+    color: var(--sand);
+    padding: 80px 24px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 40%, rgba(184,92,42,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(74,127,165,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Heebo', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: clamp(38px, 7vw, 72px);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--warm-white);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero-sub {
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 300;
+    color: var(--sand);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    opacity: 0.9;
+  }
+  .hero-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--terracotta);
+    margin: 0 auto;
+    border-radius: 2px;
+  }
+
+  /* INTRO BAND */
+  .intro-band {
+    background: var(--terracotta);
+    color: #fff;
+    text-align: center;
+    padding: 22px 24px;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  /* CARDS GRID */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+
+  .section-title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--terracotta);
+    margin-bottom: 40px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--sand);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .card {
+    background: var(--warm-white);
+    border-radius: 4px;
+    border: 1px solid rgba(44,26,14,0.1);
+    border-right: 4px solid var(--sand);
+    padding: 28px 28px 24px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .card:hover {
+    border-right-color: var(--terracotta);
+    box-shadow: 0 6px 24px rgba(44,26,14,0.1);
+    transform: translateY(-2px);
+  }
+
+  .card-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 10px;
+  }
+  .card-tag.facebook { color: #1877F2; }
+  .card-tag.news { color: var(--terracotta); }
+  .card-tag.podcast { color: var(--sage); }
+  .card-tag.video { color: #9B4DCA; }
+
+  .card h2 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: var(--deep);
+  }
+
+  .card p {
+    font-size: 15px;
+    color: #4a3728;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--terracotta);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .card-link:hover {
+    border-bottom-color: var(--terracotta);
+  }
+  .card-link svg {
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .card-link:hover svg {
+    transform: translateX(-3px);
+  }
+
+  /* HIGHLIGHTED CARD */
+  .card.highlight {
+    background: linear-gradient(135deg, #2C1A0E 0%, #3d2515 100%);
+    border-right-color: var(--terracotta);
+    color: var(--sand);
+  }
+  .card.highlight h2 { color: var(--warm-white); }
+  .card.highlight p { color: var(--sand); }
+  .card.highlight .card-link { color: #E8B89A; }
+  .card.highlight .card-tag { color: #E8B89A; }
+
+  /* FORM SECTION */
+  .form-band {
+    background: var(--deep);
+    padding: 60px 24px;
+    text-align: center;
+  }
+  .form-band h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 26px;
+    color: var(--warm-white);
+    margin-bottom: 10px;
+  }
+  .form-band p {
+    color: var(--sand);
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.85;
+  }
+  .form-btn {
+    display: inline-block;
+    background: var(--terracotta);
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .form-btn:hover {
+    background: #9B4A22;
+    transform: translateY(-1px);
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1a0f07;
+    color: rgba(232,220,200,0.5);
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 13px;
+  }
+
+  @media (min-width: 640px) {
+    .cards { grid-template-columns: 1fr 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card, .card-link svg, .form-btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="hero-eyebrow">אוסף סיפורים ומשאבים</p>
+  <h1>חיים משותפים בנגב</h1>
+  <p class="hero-sub">סיפורים שכדאי להכיר על שכנות, שותפות ומגוון אנושי בין יהודים וערבים בדואים</p>
+  <div class="hero-divider"></div>
+</header>
+
+<div class="intro-band">
+  📖 אוסף תכנים שנאסף על ידי אנשים שמאמינים בחיים משותפים בנגב
+</div>
+
+<main class="section">
+  <h2 class="section-title">תכנים ומשאבים</h2>
+  <div class="cards">
+
+    <div class="card">
+      <span class="card-tag facebook">📷 פייסבוק</span>
+      <h2>גלריה בשגב שלום</h2>
+      <p>הזדמנות להכיר את המגוון התרבותי והאנושי בחברה הבדואית.</p>
+      <a class="card-link" href="https://www.facebook.com/share/r/18YauACrgL/" target="_blank" rel="noopener">
+        הכירו את הגלריה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag facebook">👩‍💼 פייסבוק</span>
+      <h2>פעילה למען זכויות נשים במפגש עם פוליטיקאיות צעירות</h2>
+      <p>אמל אבו אלקום פעילה למען זכויות נשים בחברה הבדואית.</p>
+      <a class="card-link" href="https://www.facebook.com/share/p/1FarzYsvxD/" target="_blank" rel="noopener">
+        לפוסט בפייסבוק
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag news">📰 ידיעה</span>
+      <h2>ראש מועצת ערערה בנגב מגיע לדימונה לאחר נפילת הטיל ומציע עזרה</h2>
+      <p>ראש המועצה קרא לכל הצוותים הרפואיים בחברה הבדואית להגיע לסייע. בידיעה סרטון ובו ראש המועצה מדבר על שותפות ושכנות.</p>
+      <a class="card-link" href="https://br7news.co.il/he/news/news-1774187964" target="_blank" rel="noopener">
+        לקריאת הידיעה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag news">🏥 וואלה שבע</span>
+      <h2>הרופא הערבי בדואי שטיפל בפצועי 7.10 ובחר בפסיכיאטריה</h2>
+      <p>על חווית העבודה בבית חולים סורוקה לרופא מהחברה הערבית בדואית, בעיקר לאחר ה-7.10.</p>
+      <a class="card-link" href="https://sheva7.walla.co.il/item/3785644" target="_blank" rel="noopener">
+        לקריאה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag facebook">✍️ פייסבוק</span>
+      <h2>אדם אל אסד על ההזנחה ארוכת השנים של לקיה</h2>
+      <p>עמדה מנומקת ומוסברת היטב באשר לתופעת הפשיעה בחברה הערבית, להזנחה הממשלתית ולשיח הפופוליסטי סביב משילות.</p>
+      <a class="card-link" href="https://www.facebook.com/share/p/1Gn8UXcGKw/" target="_blank" rel="noopener">
+        לקריאה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag news">📰 ידיעה</span>
+      <h2>נוער בדואי מצטיין מתארח במיתר</h2>
+      <p>ידיעה בעתון על קבוצת מנהיגות בני נוער בדואיים של כוכבי המדבר.</p>
+      <a class="card-link" href="https://br7news.co.il/he/news/news-1759927393" target="_blank" rel="noopener">
+        לקריאה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card highlight">
+      <span class="card-tag">💡 דעה</span>
+      <h2>ההשקעה בחברה הערבית בדואית היא חיזוק הכלכלה, הביטחון ומרקם החיים בנגב</h2>
+      <p>על הנגב כמרחב משותף שבו חיים יהודים וערבים בדואים ביחד. מדוע תכניות החומש לחברה הערבית מועילות לכלכלת ישראל.</p>
+      <a class="card-link" href="https://www.ice.co.il/opinions/news/article/1093951" target="_blank" rel="noopener">
+        לקריאה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag podcast">🎙️ פודקאסט</span>
+      <h2>"קולות מדבר" – פודקאסט החברה הבדואית</h2>
+      <p>פודקאסט עשיר בתכנים ובקולות מהחברה הערבית בדואית בנגב. מאפשר גם היכרות עם ההיסטוריה, האתגרים ויזמות חדשות.</p>
+      <a class="card-link" href="https://open.spotify.com/show/3cGrcy3q2u9u85PtlREjZ3" target="_blank" rel="noopener">
+        להאזנה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag facebook">🏛️ פייסבוק</span>
+      <h2>ביקור תומר אביטל (דמוקרטים) בנגב</h2>
+      <p>לאחר ביקור בכפרים לא מוכרים, תומר אביטל מתייחס לקשר בין הזנחה והדרה לפשיעה ולזהות המורכבת של החברה הבדואית.</p>
+      <a class="card-link" href="https://www.facebook.com/share/p/1KZx72NV75/" target="_blank" rel="noopener">
+        לקריאה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag facebook">🧑 פייסבוק</span>
+      <h2>להיות צעיר בדואי – שיחה עם מאהר אבו כף</h2>
+      <p>סיפור אישי על זהות מורכבת, לבטים ותקרות זכוכית.</p>
+      <a class="card-link" href="https://www.facebook.com/share/p/1AJAJ3QBbP/" target="_blank" rel="noopener">
+        לקריאה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag video">🎬 וידאו</span>
+      <h2>קמפיין "אחמד לא פושע" של צעירים ערבים בדואים</h2>
+      <p>מנהיגים צעירים מספרים על עצמם, על עיסוקיהם ומצהירים שהם "לא פושעים" כדי לסתור את הסטיגמה.</p>
+      <a class="card-link" href="https://www.facebook.com/share/r/1DwzhwnwmL/" target="_blank" rel="noopener">
+        לצפייה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag facebook">🤝 פייסבוק</span>
+      <h2>חניכי כוכבי המדבר מתנדבים בדימונה</h2>
+      <p>חניכי כוכבי המדבר החליטו לקיים את הפעילות ההתנדבותית שלהם בדימונה לאחר נפילת הטיל. שכנות ועזרה הדדית.</p>
+      <a class="card-link" href="https://www.facebook.com/share/p/18wGQZVVPZ/" target="_blank" rel="noopener">
+        לקריאה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag news">📖 סאבסטאק</span>
+      <h2>הכפר הלא מוכר שהצליח לשגשג: נטול פשיעה ונשירה מהלימודים</h2>
+      <p>סיפור יוצא דופן על כפר לא מוכר משגשג ועל הקשר בין תעסוקה והשכלה להעדר פשיעה. חשוב גם כסיפור שובר סטריאוטיפים.</p>
+      <a class="card-link" href="https://rcuv.substack.com/p/3f1" target="_blank" rel="noopener">
+        לקריאה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag news">🌾 ידיעה</span>
+      <h2>חברות ושותפות בין חקלאים: חאג' עטייה אלעבורה הגיע לחבק את גדי מוזס עם שובו מהשבי</h2>
+      <p>שותפות חקלאית וחברות.</p>
+      <a class="card-link" href="https://www.ynet.co.il/news/article/h1sgwwr91x" target="_blank" rel="noopener">
+        לקריאה וצפייה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag video">🎬 וידאו</span>
+      <h2>דבריו של ראש עיריית רהט טלאל אלקרנאווי בהפגנה נגד הפשיעה</h2>
+      <p>ראש עיריית רהט מסביר שהבדואים אינם כולם פושעים – הם רופאים, עורכי דין, מורים וקבלנים שמפתחים ומצמיחים את הנגב. קריאה לשותפות. (דקה 52 בוידאו)</p>
+      <a class="card-link" href="https://www.facebook.com/democratv/videos/1282337077110790/" target="_blank" rel="noopener">
+        לצפייה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag video">☕ וידאו</span>
+      <h2>עגלת הקפה של פואד – בכביש מבאר שבע מזרחה</h2>
+      <p>סרטון שזכה לאלפי צפיות על עגלת קפה מוצלחת ומצליחה.</p>
+      <a class="card-link" href="https://www.facebook.com/reel/1157970475964086" target="_blank" rel="noopener">
+        לצפייה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag video">🏙️ וידאו</span>
+      <h2>שגב שלום זה ממש לא רק ירי – ביקור עם סגן ראש המועצה</h2>
+      <p>להכיר את הצד האחר של הישובים הבדואים: בתי הקפה, העסקים, האנשים.</p>
+      <a class="card-link" href="https://www.facebook.com/share/p/1HLZ2XyEct/" target="_blank" rel="noopener">
+        לצפייה
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<div class="form-band">
+  <h3>רוצים להוסיף תוכן?</h3>
+  <p>שלחו לנו סיפורים, לינקים ומשאבים נוספים על חיים משותפים בנגב</p>
+  <a class="form-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfX_bq9onGjCZdlWcielHzPYgZWNXRQlKnMr8zRq3btvcRpeQ/viewform" target="_blank" rel="noopener">
+    לטופס ההוספה ←
+  </a>
+</div>
+
+<footer>
+  <p>חיים משותפים בנגב · אוסף תכנים ומשאבים · כל הזכויות שמורות לבעלי התכנים המקוריים</p>
+</footer>
+
+</body>
+</html>
