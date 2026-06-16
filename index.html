@@ -27,7 +27,6 @@
     direction: rtl;
   }
 
-  /* HERO */
   .hero {
     background: var(--deep);
     color: var(--sand);
@@ -45,7 +44,6 @@
     pointer-events: none;
   }
   .hero-eyebrow {
-    font-family: 'Heebo', sans-serif;
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.15em;
@@ -78,7 +76,6 @@
     border-radius: 2px;
   }
 
-  /* INTRO BAND */
   .intro-band {
     background: var(--terracotta);
     color: #fff;
@@ -86,10 +83,8 @@
     padding: 22px 24px;
     font-size: 17px;
     font-weight: 400;
-    letter-spacing: 0.01em;
   }
 
-  /* CARDS GRID */
   .section {
     max-width: 900px;
     margin: 0 auto;
@@ -129,14 +124,24 @@
     border-radius: 4px;
     border: 1px solid rgba(44,26,14,0.1);
     border-right: 4px solid var(--sand);
-    padding: 28px 28px 24px;
+    overflow: hidden;
     transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    position: relative;
   }
   .card:hover {
     border-right-color: var(--terracotta);
     box-shadow: 0 6px 24px rgba(44,26,14,0.1);
     transform: translateY(-2px);
+  }
+
+  .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-body {
+    padding: 24px 28px 20px;
   }
 
   .card-tag {
@@ -180,29 +185,20 @@
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s;
   }
-  .card-link:hover {
-    border-bottom-color: var(--terracotta);
-  }
-  .card-link svg {
-    flex-shrink: 0;
-    transition: transform 0.2s;
-  }
-  .card-link:hover svg {
-    transform: translateX(-3px);
-  }
+  .card-link:hover { border-bottom-color: var(--terracotta); }
+  .card-link:hover svg { transform: translateX(-3px); }
+  .card-link svg { flex-shrink: 0; transition: transform 0.2s; }
 
-  /* HIGHLIGHTED CARD */
   .card.highlight {
     background: linear-gradient(135deg, #2C1A0E 0%, #3d2515 100%);
     border-right-color: var(--terracotta);
-    color: var(--sand);
   }
+  .card.highlight .card-body { background: transparent; }
   .card.highlight h2 { color: var(--warm-white); }
   .card.highlight p { color: var(--sand); }
   .card.highlight .card-link { color: #E8B89A; }
   .card.highlight .card-tag { color: #E8B89A; }
 
-  /* FORM SECTION */
   .form-band {
     background: var(--deep);
     padding: 60px 24px;
@@ -231,12 +227,8 @@
     font-weight: 500;
     transition: background 0.2s, transform 0.15s;
   }
-  .form-btn:hover {
-    background: #9B4A22;
-    transform: translateY(-1px);
-  }
+  .form-btn:hover { background: #9B4A22; transform: translateY(-1px); }
 
-  /* FOOTER */
   footer {
     background: #1a0f07;
     color: rgba(232,220,200,0.5);
@@ -271,173 +263,224 @@
   <div class="cards">
 
     <div class="card">
-      <span class="card-tag facebook">📷 פייסבוק</span>
-      <h2>גלריה בשגב שלום</h2>
-      <p>הזדמנות להכיר את המגוון התרבותי והאנושי בחברה הבדואית.</p>
-      <a class="card-link" href="https://www.facebook.com/share/r/18YauACrgL/" target="_blank" rel="noopener">
-        הכירו את הגלריה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/gallery.jpg" alt="גלריה בשגב שלום">
+      <div class="card-body">
+        <span class="card-tag facebook">📷 פייסבוק</span>
+        <h2>גלריה בשגב שלום</h2>
+        <p>הזדמנות להכיר את המגוון התרבותי והאנושי בחברה הבדואית.</p>
+        <a class="card-link" href="https://www.facebook.com/share/r/18YauACrgL/" target="_blank" rel="noopener">
+          הכירו את הגלריה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag facebook">👩‍💼 פייסבוק</span>
-      <h2>פעילה למען זכויות נשים במפגש עם פוליטיקאיות צעירות</h2>
-      <p>אמל אבו אלקום פעילה למען זכויות נשים בחברה הבדואית.</p>
-      <a class="card-link" href="https://www.facebook.com/share/p/1FarzYsvxD/" target="_blank" rel="noopener">
-        לפוסט בפייסבוק
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/politicians.jpg" alt="פוליטיקאיות צעירות">
+      <div class="card-body">
+        <span class="card-tag facebook">👩‍💼 פייסבוק</span>
+        <h2>פעילה למען זכויות נשים במפגש עם פוליטיקאיות צעירות</h2>
+        <p>אמל אבו אלקום פעילה למען זכויות נשים בחברה הבדואית.</p>
+        <a class="card-link" href="https://www.facebook.com/share/p/1FarzYsvxD/" target="_blank" rel="noopener">
+          לפוסט בפייסבוק
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag news">📰 ידיעה</span>
-      <h2>ראש מועצת ערערה בנגב מגיע לדימונה לאחר נפילת הטיל ומציע עזרה</h2>
-      <p>ראש המועצה קרא לכל הצוותים הרפואיים בחברה הבדואית להגיע לסייע. בידיעה סרטון ובו ראש המועצה מדבר על שותפות ושכנות.</p>
-      <a class="card-link" href="https://br7news.co.il/he/news/news-1774187964" target="_blank" rel="noopener">
-        לקריאת הידיעה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/araara.jpg" alt="ראש מועצת ערערה">
+      <div class="card-body">
+        <span class="card-tag news">📰 ידיעה</span>
+        <h2>ראש מועצת ערערה בנגב מגיע לדימונה לאחר נפילת הטיל ומציע עזרה</h2>
+        <p>ראש המועצה קרא לכל הצוותים הרפואיים בחברה הבדואית להגיע לסייע. בידיעה סרטון ובו ראש המועצה מדבר על שותפות ושכנות.</p>
+        <a class="card-link" href="https://br7news.co.il/he/news/news-1774187964" target="_blank" rel="noopener">
+          לקריאת הידיעה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag news">🏥 וואלה שבע</span>
-      <h2>הרופא הערבי בדואי שטיפל בפצועי 7.10 ובחר בפסיכיאטריה</h2>
-      <p>על חווית העבודה בבית חולים סורוקה לרופא מהחברה הערבית בדואית, בעיקר לאחר ה-7.10.</p>
-      <a class="card-link" href="https://sheva7.walla.co.il/item/3785644" target="_blank" rel="noopener">
-        לקריאה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/doctor.jpg" alt="הרופא הבדואי">
+      <div class="card-body">
+        <span class="card-tag news">🏥 וואלה שבע</span>
+        <h2>הרופא הערבי בדואי שטיפל בפצועי 7.10 ובחר בפסיכיאטריה</h2>
+        <p>על חווית העבודה בבית חולים סורוקה לרופא מהחברה הערבית בדואית, בעיקר לאחר ה-7.10.</p>
+        <a class="card-link" href="https://sheva7.walla.co.il/item/3785644" target="_blank" rel="noopener">
+          לקריאה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag facebook">✍️ פייסבוק</span>
-      <h2>אדם אל אסד על ההזנחה ארוכת השנים של לקיה</h2>
-      <p>עמדה מנומקת ומוסברת היטב באשר לתופעת הפשיעה בחברה הערבית, להזנחה הממשלתית ולשיח הפופוליסטי סביב משילות.</p>
-      <a class="card-link" href="https://www.facebook.com/share/p/1Gn8UXcGKw/" target="_blank" rel="noopener">
-        לקריאה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/adam.jpg" alt="אדם אל אסד">
+      <div class="card-body">
+        <span class="card-tag facebook">✍️ פייסבוק</span>
+        <h2>אדם אל אסד על ההזנחה ארוכת השנים של לקיה</h2>
+        <p>עמדה מנומקת ומוסברת היטב באשר לתופעת הפשיעה בחברה הערבית, להזנחה הממשלתית ולשיח הפופוליסטי סביב משילות.</p>
+        <a class="card-link" href="https://www.facebook.com/share/p/1Gn8UXcGKw/" target="_blank" rel="noopener">
+          לקריאה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag news">📰 ידיעה</span>
-      <h2>נוער בדואי מצטיין מתארח במיתר</h2>
-      <p>ידיעה בעתון על קבוצת מנהיגות בני נוער בדואיים של כוכבי המדבר.</p>
-      <a class="card-link" href="https://br7news.co.il/he/news/news-1759927393" target="_blank" rel="noopener">
-        לקריאה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/desert_stars.jpg" alt="כוכבי המדבר">
+      <div class="card-body">
+        <span class="card-tag news">📰 ידיעה</span>
+        <h2>נוער בדואי מצטיין מתארח במיתר</h2>
+        <p>ידיעה בעתון על קבוצת מנהיגות בני נוער בדואיים של כוכבי המדבר.</p>
+        <a class="card-link" href="https://br7news.co.il/he/news/news-1759927393" target="_blank" rel="noopener">
+          לקריאה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card highlight">
-      <span class="card-tag">💡 דעה</span>
-      <h2>ההשקעה בחברה הערבית בדואית היא חיזוק הכלכלה, הביטחון ומרקם החיים בנגב</h2>
-      <p>על הנגב כמרחב משותף שבו חיים יהודים וערבים בדואים ביחד. מדוע תכניות החומש לחברה הערבית מועילות לכלכלת ישראל.</p>
-      <a class="card-link" href="https://www.ice.co.il/opinions/news/article/1093951" target="_blank" rel="noopener">
-        לקריאה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/yasmin.jpg" alt="ישמין פרידמן">
+      <div class="card-body">
+        <span class="card-tag">💡 דעה</span>
+        <h2>ההשקעה בחברה הערבית בדואית היא חיזוק הכלכלה, הביטחון ומרקם החיים בנגב</h2>
+        <p>על הנגב כמרחב משותף שבו חיים יהודים וערבים בדואים ביחד. מדוע תכניות החומש לחברה הערבית מועילות לכלכלת ישראל.</p>
+        <a class="card-link" href="https://www.ice.co.il/opinions/news/article/1093951" target="_blank" rel="noopener">
+          לקריאה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag podcast">🎙️ פודקאסט</span>
-      <h2>"קולות מדבר" – פודקאסט החברה הבדואית</h2>
-      <p>פודקאסט עשיר בתכנים ובקולות מהחברה הערבית בדואית בנגב. מאפשר גם היכרות עם ההיסטוריה, האתגרים ויזמות חדשות.</p>
-      <a class="card-link" href="https://open.spotify.com/show/3cGrcy3q2u9u85PtlREjZ3" target="_blank" rel="noopener">
-        להאזנה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/podcast.jpeg" alt="קולות מדבר פודקאסט">
+      <div class="card-body">
+        <span class="card-tag podcast">🎙️ פודקאסט</span>
+        <h2>"קולות מדבר" – פודקאסט החברה הבדואית</h2>
+        <p>פודקאסט עשיר בתכנים ובקולות מהחברה הערבית בדואית בנגב. מאפשר גם היכרות עם ההיסטוריה, האתגרים ויזמות חדשות.</p>
+        <a class="card-link" href="https://open.spotify.com/show/3cGrcy3q2u9u85PtlREjZ3" target="_blank" rel="noopener">
+          להאזנה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag facebook">🏛️ פייסבוק</span>
-      <h2>ביקור תומר אביטל (דמוקרטים) בנגב</h2>
-      <p>לאחר ביקור בכפרים לא מוכרים, תומר אביטל מתייחס לקשר בין הזנחה והדרה לפשיעה ולזהות המורכבת של החברה הבדואית.</p>
-      <a class="card-link" href="https://www.facebook.com/share/p/1KZx72NV75/" target="_blank" rel="noopener">
-        לקריאה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/tomer.jpg" alt="תומר אביטל">
+      <div class="card-body">
+        <span class="card-tag facebook">🏛️ פייסבוק</span>
+        <h2>ביקור תומר אביטל (דמוקרטים) בנגב</h2>
+        <p>לאחר ביקור בכפרים לא מוכרים, תומר אביטל מתייחס לקשר בין הזנחה והדרה לפשיעה ולזהות המורכבת של החברה הבדואית.</p>
+        <a class="card-link" href="https://www.facebook.com/share/p/1KZx72NV75/" target="_blank" rel="noopener">
+          לקריאה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag facebook">🧑 פייסבוק</span>
-      <h2>להיות צעיר בדואי – שיחה עם מאהר אבו כף</h2>
-      <p>סיפור אישי על זהות מורכבת, לבטים ותקרות זכוכית.</p>
-      <a class="card-link" href="https://www.facebook.com/share/p/1AJAJ3QBbP/" target="_blank" rel="noopener">
-        לקריאה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/maher.jpg" alt="מאהר אבו כף">
+      <div class="card-body">
+        <span class="card-tag facebook">🧑 פייסבוק</span>
+        <h2>להיות צעיר בדואי – שיחה עם מאהר אבו כף</h2>
+        <p>סיפור אישי על זהות מורכבת, לבטים ותקרות זכוכית.</p>
+        <a class="card-link" href="https://www.facebook.com/share/p/1AJAJ3QBbP/" target="_blank" rel="noopener">
+          לקריאה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag video">🎬 וידאו</span>
-      <h2>קמפיין "אחמד לא פושע" של צעירים ערבים בדואים</h2>
-      <p>מנהיגים צעירים מספרים על עצמם, על עיסוקיהם ומצהירים שהם "לא פושעים" כדי לסתור את הסטיגמה.</p>
-      <a class="card-link" href="https://www.facebook.com/share/r/1DwzhwnwmL/" target="_blank" rel="noopener">
-        לצפייה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/dimona_doctors.jpeg" alt="רופאים מגיעים לדימונה">
+      <div class="card-body">
+        <span class="card-tag video">🎬 וידאו</span>
+        <h2>קמפיין "אחמד לא פושע" של צעירים ערבים בדואים</h2>
+        <p>מנהיגים צעירים מספרים על עצמם, על עיסוקיהם ומצהירים שהם "לא פושעים" כדי לסתור את הסטיגמה.</p>
+        <a class="card-link" href="https://www.facebook.com/share/r/1DwzhwnwmL/" target="_blank" rel="noopener">
+          לצפייה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag facebook">🤝 פייסבוק</span>
-      <h2>חניכי כוכבי המדבר מתנדבים בדימונה</h2>
-      <p>חניכי כוכבי המדבר החליטו לקיים את הפעילות ההתנדבותית שלהם בדימונה לאחר נפילת הטיל. שכנות ועזרה הדדית.</p>
-      <a class="card-link" href="https://www.facebook.com/share/p/18wGQZVVPZ/" target="_blank" rel="noopener">
-        לקריאה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/doctors_negev.png" alt="רופאים בנגב">
+      <div class="card-body">
+        <span class="card-tag facebook">🤝 פייסבוק</span>
+        <h2>חניכי כוכבי המדבר מתנדבים בדימונה</h2>
+        <p>חניכי כוכבי המדבר החליטו לקיים את הפעילות ההתנדבותית שלהם בדימונה לאחר נפילת הטיל. שכנות ועזרה הדדית.</p>
+        <a class="card-link" href="https://www.facebook.com/share/p/18wGQZVVPZ/" target="_blank" rel="noopener">
+          לקריאה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag news">📖 סאבסטאק</span>
-      <h2>הכפר הלא מוכר שהצליח לשגשג: נטול פשיעה ונשירה מהלימודים</h2>
-      <p>סיפור יוצא דופן על כפר לא מוכר משגשג ועל הקשר בין תעסוקה והשכלה להעדר פשיעה. חשוב גם כסיפור שובר סטריאוטיפים.</p>
-      <a class="card-link" href="https://rcuv.substack.com/p/3f1" target="_blank" rel="noopener">
-        לקריאה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/village.png" alt="כפר לא מוכר משגשג">
+      <div class="card-body">
+        <span class="card-tag news">📖 סאבסטאק</span>
+        <h2>הכפר הלא מוכר שהצליח לשגשג: נטול פשיעה ונשירה מהלימודים</h2>
+        <p>סיפור יוצא דופן על כפר לא מוכר משגשג ועל הקשר בין תעסוקה והשכלה להעדר פשיעה. חשוב גם כסיפור שובר סטריאוטיפים.</p>
+        <a class="card-link" href="https://rcuv.substack.com/p/3f1" target="_blank" rel="noopener">
+          לקריאה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag news">🌾 ידיעה</span>
-      <h2>חברות ושותפות בין חקלאים: חאג' עטייה אלעבורה הגיע לחבק את גדי מוזס עם שובו מהשבי</h2>
-      <p>שותפות חקלאית וחברות.</p>
-      <a class="card-link" href="https://www.ynet.co.il/news/article/h1sgwwr91x" target="_blank" rel="noopener">
-        לקריאה וצפייה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/araara.jpg" alt="חקלאים שותפים">
+      <div class="card-body">
+        <span class="card-tag news">🌾 ידיעה</span>
+        <h2>חברות ושותפות בין חקלאים: חאג' עטייה אלעבורה הגיע לחבק את גדי מוזס עם שובו מהשבי</h2>
+        <p>שותפות חקלאית וחברות.</p>
+        <a class="card-link" href="https://www.ynet.co.il/news/article/h1sgwwr91x" target="_blank" rel="noopener">
+          לקריאה וצפייה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag video">🎬 וידאו</span>
-      <h2>דבריו של ראש עיריית רהט טלאל אלקרנאווי בהפגנה נגד הפשיעה</h2>
-      <p>ראש עיריית רהט מסביר שהבדואים אינם כולם פושעים – הם רופאים, עורכי דין, מורים וקבלנים שמפתחים ומצמיחים את הנגב. קריאה לשותפות. (דקה 52 בוידאו)</p>
-      <a class="card-link" href="https://www.facebook.com/democratv/videos/1282337077110790/" target="_blank" rel="noopener">
-        לצפייה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/araara.jpg" alt="ראש עיריית רהט">
+      <div class="card-body">
+        <span class="card-tag video">🎬 וידאו</span>
+        <h2>דבריו של ראש עיריית רהט טלאל אלקרנאווי בהפגנה נגד הפשיעה</h2>
+        <p>ראש עיריית רהט מסביר שהבדואים אינם כולם פושעים – הם רופאים, עורכי דין, מורים וקבלנים שמפתחים ומצמיחים את הנגב. קריאה לשותפות. (דקה 52 בוידאו)</p>
+        <a class="card-link" href="https://www.facebook.com/democratv/videos/1282337077110790/" target="_blank" rel="noopener">
+          לצפייה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag video">☕ וידאו</span>
-      <h2>עגלת הקפה של פואד – בכביש מבאר שבע מזרחה</h2>
-      <p>סרטון שזכה לאלפי צפיות על עגלת קפה מוצלחת ומצליחה.</p>
-      <a class="card-link" href="https://www.facebook.com/reel/1157970475964086" target="_blank" rel="noopener">
-        לצפייה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/coffee_cart.png" alt="עגלת קפה של פואד">
+      <div class="card-body">
+        <span class="card-tag video">☕ וידאו</span>
+        <h2>עגלת הקפה של פואד – בכביש מבאר שבע מזרחה</h2>
+        <p>סרטון שזכה לאלפי צפיות על עגלת קפה מוצלחת ומצליחה.</p>
+        <a class="card-link" href="https://www.facebook.com/reel/1157970475964086" target="_blank" rel="noopener">
+          לצפייה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
     <div class="card">
-      <span class="card-tag video">🏙️ וידאו</span>
-      <h2>שגב שלום זה ממש לא רק ירי – ביקור עם סגן ראש המועצה</h2>
-      <p>להכיר את הצד האחר של הישובים הבדואים: בתי הקפה, העסקים, האנשים.</p>
-      <a class="card-link" href="https://www.facebook.com/share/p/1HLZ2XyEct/" target="_blank" rel="noopener">
-        לצפייה
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      </a>
+      <img class="card-img" src="images/shagav_shalom.png" alt="שגב שלום">
+      <div class="card-body">
+        <span class="card-tag video">🏙️ וידאו</span>
+        <h2>שגב שלום זה ממש לא רק ירי – ביקור עם סגן ראש המועצה</h2>
+        <p>להכיר את הצד האחר של הישובים הבדואים: בתי הקפה, העסקים, האנשים.</p>
+        <a class="card-link" href="https://www.facebook.com/share/p/1HLZ2XyEct/" target="_blank" rel="noopener">
+          לצפייה
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        </a>
+      </div>
     </div>
 
   </div>
