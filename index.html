@@ -138,6 +138,10 @@
     height: 200px;
     object-fit: cover;
     display: block;
+    transition: opacity 0.2s;
+  }
+  .card a:has(.card-img):hover .card-img {
+    opacity: 0.85;
   }
 
   .card-body {
@@ -248,6 +252,7 @@
 <body>
 
 <header class="hero">
+  <p class="hero-eyebrow">אוסף סיפורים ומשאבים</p>
   <h1>חיים משותפים בנגב</h1>
   <p class="hero-sub">סיפורים שכדאי להכיר על שכנות, שותפות ומגוון אנושי בין יהודים וערבים בדואים</p>
   <div class="hero-divider"></div>
@@ -258,10 +263,11 @@
 </div>
 
 <main class="section">
+  <h2 class="section-title">תכנים ומשאבים</h2>
   <div class="cards">
 
     <div class="card">
-      <img class="card-img" src="images/gallery.jpg" alt="גלריה בשגב שלום">
+      <a href="https://www.facebook.com/share/r/18YauACrgL/" target="_blank" rel="noopener"><img class="card-img" src="images/gallery.jpg" style="display:block;" alt="גלריה בשגב שלום"></a>
       <div class="card-body">
         <span class="card-tag facebook">📷 פייסבוק</span>
         <h2>גלריה בשגב שלום</h2>
@@ -274,7 +280,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/politicians.jpg" alt="פוליטיקאיות צעירות">
+      <a href="https://www.facebook.com/share/p/1FarzYsvxD/" target="_blank" rel="noopener"><img class="card-img" src="images/politicians.jpg" style="display:block;" alt="פוליטיקאיות צעירות"></a>
       <div class="card-body">
         <span class="card-tag facebook">👩‍💼 פייסבוק</span>
         <h2>פעילה למען זכויות נשים במפגש עם פוליטיקאיות צעירות</h2>
@@ -287,7 +293,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/araara_new.png" alt="ראש מועצת ערערה">
+      <a href="https://br7news.co.il/he/news/news-1774187964" target="_blank" rel="noopener"><img class="card-img" src="images/araara_new.png" style="display:block;" alt="ראש מועצת ערערה"></a>
       <div class="card-body">
         <span class="card-tag news">📰 ידיעה</span>
         <h2>ראש מועצת ערערה בנגב מגיע לדימונה לאחר נפילת הטיל ומציע עזרה</h2>
@@ -300,7 +306,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/doctor.jpg" alt="הרופא הבדואי">
+      <a href="https://sheva7.walla.co.il/item/3785644" target="_blank" rel="noopener"><img class="card-img" src="images/doctor.jpg" style="display:block;" alt="הרופא הבדואי"></a>
       <div class="card-body">
         <span class="card-tag news">🏥 וואלה שבע</span>
         <h2>הרופא הערבי בדואי שטיפל בפצועי 7.10 ובחר בפסיכיאטריה</h2>
@@ -313,7 +319,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/adam.jpg" alt="אדם אל אסד">
+      <a href="https://www.facebook.com/share/p/1Gn8UXcGKw/" target="_blank" rel="noopener"><img class="card-img" src="images/adam.jpg" style="display:block;" alt="אדם אל אסד"></a>
       <div class="card-body">
         <span class="card-tag facebook">✍️ פייסבוק</span>
         <h2>אדם אל אסד על ההזנחה ארוכת השנים של לקיה</h2>
@@ -325,8 +331,8 @@
       </div>
     </div>
 
-    <div class="card">
-      <img class="card-img" src="images/yasmin.jpg" alt="ישמין פרידמן">
+    <div class="card highlight">
+      <a href="https://www.ice.co.il/opinions/news/article/1093951" target="_blank" rel="noopener"><img class="card-img" src="images/yasmin.jpg" style="display:block;" alt="ישמין פרידמן"></a>
       <div class="card-body">
         <span class="card-tag">💡 דעה</span>
         <h2>ההשקעה בחברה הערבית בדואית היא חיזוק הכלכלה, הביטחון ומרקם החיים בנגב</h2>
@@ -339,7 +345,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/podcast.jpeg" alt="קולות מדבר פודקאסט">
+      <a href="https://open.spotify.com/show/3cGrcy3q2u9u85PtlREjZ3" target="_blank" rel="noopener"><img class="card-img" src="images/podcast.jpeg" style="display:block;" alt="קולות מדבר פודקאסט"></a>
       <div class="card-body">
         <span class="card-tag podcast">🎙️ פודקאסט</span>
         <h2>"קולות מדבר" – פודקאסט החברה הבדואית</h2>
@@ -352,7 +358,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/tomer.jpg" alt="תומר אביטל">
+      <a href="https://www.facebook.com/share/p/1KZx72NV75/" target="_blank" rel="noopener"><img class="card-img" src="images/tomer.jpg" style="display:block;" alt="תומר אביטל"></a>
       <div class="card-body">
         <span class="card-tag facebook">🏛️ פייסבוק</span>
         <h2>ביקור תומר אביטל (דמוקרטים) בנגב</h2>
@@ -365,7 +371,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/maher.jpg" alt="מאהר אבו כף">
+      <a href="https://www.facebook.com/share/p/1AJAJ3QBbP/" target="_blank" rel="noopener"><img class="card-img" src="images/maher.jpg" style="display:block;" alt="מאהר אבו כף"></a>
       <div class="card-body">
         <span class="card-tag facebook">🧑 פייסבוק</span>
         <h2>להיות צעיר בדואי – שיחה עם מאהר אבו כף</h2>
@@ -378,7 +384,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/ahmad_campaign.png" alt='קמפיין אחמד לא פושע'>
+      <a href="https://www.facebook.com/share/r/1DwzhwnwmL/" target="_blank" rel="noopener"><img class="card-img" src="images/ahmad_campaign.png" style="display:block;" alt='קמפיין אחמד לא פושע'></a>
       <div class="card-body">
         <span class="card-tag video">🎬 וידאו</span>
         <h2>קמפיין "אחמד לא פושע" של צעירים ערבים בדואים</h2>
@@ -391,7 +397,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/dimona_volunteers.jpg" alt="חניכי כוכבי המדבר מתנדבים בדימונה">
+      <a href="https://www.facebook.com/share/p/18wGQZVVPZ/" target="_blank" rel="noopener"><img class="card-img" src="images/dimona_volunteers.jpg" style="display:block;" alt="חניכי כוכבי המדבר מתנדבים בדימונה"></a>
       <div class="card-body">
         <span class="card-tag facebook">🤝 פייסבוק</span>
         <h2>חניכי כוכבי המדבר מתנדבים בדימונה</h2>
@@ -404,7 +410,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/village.png" alt="כפר לא מוכר משגשג">
+      <a href="https://rcuv.substack.com/p/3f1" target="_blank" rel="noopener"><img class="card-img" src="images/village.png" style="display:block;" alt="כפר לא מוכר משגשג"></a>
       <div class="card-body">
         <span class="card-tag news">📖 סאבסטאק</span>
         <h2>הכפר הלא מוכר שהצליח לשגשג: נטול פשיעה ונשירה מהלימודים</h2>
@@ -417,7 +423,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/gadi_moses.png" alt="חאג' עטייה אלעבורה וגדי מוזס">
+      <a href="https://www.ynet.co.il/news/article/h1sgwwr91x" target="_blank" rel="noopener"><img class="card-img" src="images/gadi_moses.png" style="display:block;" alt="חאג' עטייה אלעבורה וגדי מוזס"></a>
       <div class="card-body">
         <span class="card-tag news">🌾 ידיעה</span>
         <h2>חברות ושותפות בין חקלאים: חאג' עטייה אלעבורה הגיע לחבק את גדי מוזס עם שובו מהשבי</h2>
@@ -430,7 +436,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/rahat_mayor.png" alt="ראש עיריית רהט">
+      <a href="https://www.facebook.com/democratv/videos/1282337077110790/" target="_blank" rel="noopener"><img class="card-img" src="images/rahat_mayor.png" style="display:block;" alt="ראש עיריית רהט"></a>
       <div class="card-body">
         <span class="card-tag video">🎬 וידאו</span>
         <h2>דבריו של ראש עיריית רהט טלאל אלקרנאווי בהפגנה נגד הפשיעה</h2>
@@ -443,7 +449,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/coffee_cart.png" alt="עגלת קפה של פואד">
+      <a href="https://www.facebook.com/reel/1157970475964086" target="_blank" rel="noopener"><img class="card-img" src="images/coffee_cart.png" style="display:block;" alt="עגלת קפה של פואד"></a>
       <div class="card-body">
         <span class="card-tag video">☕ וידאו</span>
         <h2>עגלת הקפה של פואד – בכביש מבאר שבע מזרחה</h2>
@@ -456,7 +462,7 @@
     </div>
 
     <div class="card">
-      <img class="card-img" src="images/shagav_shalom.png" alt="שגב שלום">
+      <a href="https://www.facebook.com/share/p/1HLZ2XyEct/" target="_blank" rel="noopener"><img class="card-img" src="images/shagav_shalom.png" style="display:block;" alt="שגב שלום"></a>
       <div class="card-body">
         <span class="card-tag video">🏙️ וידאו</span>
         <h2>שגב שלום זה ממש לא רק ירי – ביקור עם סגן ראש המועצה</h2>
@@ -480,7 +486,7 @@
 </div>
 
 <footer>
-  <p>חיים משותפים בנגב · achord@mail.huji.ac.il כל הזכויות שמורות לבעלי התכנים המקוריים</p>
+  <p>חיים משותפים בנגב · אוסף תכנים ומשאבים · כל הזכויות שמורות לבעלי התכנים המקוריים</p>
 </footer>
 
 </body>
